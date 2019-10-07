@@ -1,7 +1,19 @@
-#OS指定
-OS="Linux"
+## OS指定
+if [ "$(uname)" == 'Darwin' ]; then
+  OS='Mac'
+elif [ "$(expr substr $(uname -s) 1 5)" == 'Linux' ]; then
+  OS='Linux'
+else
+  OS='WINDOWS'
+fi
 
-# 汎用コマンド
+## prompt表示
+# --example
+# usr-name_Green:curent-directory_Cian (git-branch)_Purple
+# $ cmd
+PS1="\[\e[32m\]\u\[\e[00m\]:\[\e[36m\]\w\[\e[35m\]$(__git_ps1)\[\e[m\]\n $ "
+
+## 汎用コマンド
 
 alias ls='ls --color=auto'
 alias la='ls -A'
@@ -13,10 +25,10 @@ alias mv='mv -i'
 alias rm='rm -i'
 alias cp='cp -i'
 
-# usr名表示
-export PS1='\[\033[32m\]\u\[\033[00m\]:\[\033[36m\]\w\[\033[00m\] $ '
+alias du='df -h'
+alias du='du -h'
 
-# Windowsのコマンドをエンコード
+## Windowsのコマンドをエンコード
 if [ $OS = "Windows" ] ; then
   function wincmd(){
     CMD=$1
@@ -25,7 +37,7 @@ if [ $OS = "Windows" ] ; then
   }
 fi
 
-# コマンドエンコード
+## コマンドエンコード
 if [ $OS = "Windows" ] ; then
   alias ping='wincmd ping'
   alias ipconfig='wincmd ipconfig'

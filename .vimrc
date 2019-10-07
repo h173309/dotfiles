@@ -66,6 +66,8 @@ set formatoptions=q
 set formatoptions=q
 " クラッシュ防止（http://superuser.com/questions/810622/vim-crashes-freezes-on-specific-files-mac-osx-mavericks）
 set synmaxcol=200
+" backspace
+set backspace=indent,eol,start
 """"""""""""""""""""""""""""""
 
 " grep検索の実行後にQuickFix Listを表示する
@@ -107,9 +109,9 @@ nnoremap x "_x
 nnoremap s "_s
 
 """"""""""""""""""""""""""""""
-" backspace消去を有効化
+" backspace文字消去
 """"""""""""""""""""""""""""""
-nnoremap <BS> i<BS><ESC><LEFT>
+nnoremap <BS> <LEFT>"_x
 
 """"""""""""""""""""""""""""""
 " 自動的に閉じ括弧を入力
@@ -117,6 +119,4 @@ nnoremap <BS> i<BS><ESC><LEFT>
 inoremap { {}<LEFT>
 inoremap [ []<LEFT>
 inoremap ( ()<LEFT>
-inoremap ' ''<LEFT>
-inoremap " ""<LEFT>
 """"""""""""""""""""""""""""""
