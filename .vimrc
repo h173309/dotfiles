@@ -4,6 +4,8 @@
 """"""""""""""""""""""""""""""
 " 各種オプションの設定
 """"""""""""""""""""""""""""""
+" 文字コード
+set fenc=utf-8
 " バックアップファイルを無視する
 set nobackup
 set noswapfile
@@ -68,6 +70,9 @@ set formatoptions=q
 set synmaxcol=200
 " backspace
 set backspace=indent,eol,start
+" 不可視文字を表示
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
 """"""""""""""""""""""""""""""
 
 " grep検索の実行後にQuickFix Listを表示する
