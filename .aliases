@@ -13,10 +13,7 @@ alias cp='cp -i'
 alias df='df -h'
 alias du='du -h'
 
-alias wbrc='code ~/.bashrc'
-alias rbrc='source ~/.bashrc'
-alias wzrc='code ~/.zshrc'
-alias rzrc='source ~/.zshrc'
+alias relogin='exec ${SHELL} -l'
 
 alias python='python3'
 alias which_python='which python3'
