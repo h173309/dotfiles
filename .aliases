@@ -15,11 +15,6 @@ alias du='du -h'
 
 alias relogin='exec ${SHELL} -l'
 
-alias python='python3'
-alias which_python='which python3'
-alias pip='pip3'
-alias which_pip='which pip3'
-
 alias oj-s-pypy='oj s --no-open -l 4047'
 function oj-t-py(){
     command oj t -c "python3 $1"
