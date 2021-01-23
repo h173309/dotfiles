@@ -15,7 +15,13 @@ alias du='du -h'
 
 alias relogin='exec ${SHELL} -l'
 
-alias oj-s-pypy='oj s --no-open -l 4047'
+# online-judge-tools用エイリアス
+alias oj-s-pypy='oj s -y --no-open -l 4047'
+alias oj-s='oj s -y --no-open'
+
 function oj-t-py(){
     command oj t -c "python3 $1"
+}
+function oj-t-pypy(){
+    command oj t -c "pypy3 $1"
 }
